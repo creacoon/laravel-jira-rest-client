@@ -48,10 +48,9 @@ class IssueRequest extends AbstractRequest
      * @see https://developer.atlassian.com/cloud/jira/platform/rest/v3/#api-rest-api-3-issue-createmeta-get
      * @throws \Exception
      */
-    public function getCreateMetadata()
+    public function getCreateMetadata(array $parameters = [])
     {
-        // TODO: implement
-        throw new \Exception('Not yet implemented');
+        return $this->execute('get', "issue/createmeta", $parameters);
     }
 
     /**

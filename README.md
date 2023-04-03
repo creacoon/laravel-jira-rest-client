@@ -1,6 +1,6 @@
-# Jira API client for Laravel 5.4+
+# Jira API client for Laravel 9+
 
-Perform various operations of [Jira APIs](https://developer.atlassian.com/cloud/jira/platform/rest/) with Laravel 5.4+
+Perform various operations of [Jira APIs](https://developer.atlassian.com/cloud/jira/platform/rest/) with Laravel 9+
 
 The aim of the package is to make it easier to communicate with the API. By default the response from the request is not altered in any way.
 By creating your own implementation or by using the simple helpers provided with the package you are able to integrate Jira the way you like.
@@ -13,32 +13,6 @@ composer require rjvandoesburg/laravel-jira-rest-client
 ```
 Do note that not all methods have been implemented yet.
 
-Laravel 5.5 uses Package Auto-Discovery, so doesn't require you to manually add the ServiceProvider.
-
-## Laravel 5.4:
-
-If you don't use auto-discovery, add the ServiceProvider to the providers array in `config/app.php`
-```php
-<?php
-
-'providers' => [
-    // ...
-
-    Atlassian\JiraRest\JiraRestServiceProvider::class,
-],
-```
-
-Also locate the `Aliases` key in your `config/app.php` file and register the Facade:
-
-```php
-<?php
-
-'aliases' => [
-    // ...
-
-    'Jira' => Atlassian\JiraRest\Facades\Jira::class,
-],
-```
 Copy the package config to your local config with the publish command:
 ```shell
 php artisan vendor:publish --provider="Atlassian\JiraRest\JiraRestServiceProvider"
