@@ -45,12 +45,31 @@ class IssueRequest extends AbstractRequest
     }
 
     /**
-     * @see https://developer.atlassian.com/cloud/jira/platform/rest/v3/#api-rest-api-3-issue-createmeta-get
+     * @see https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issues/#api-rest-api-3-issue-createmeta-get
      * @throws \Exception
+     * @deprecated
      */
     public function getCreateMetadata(array $parameters = [])
     {
         return $this->execute('get', "issue/createmeta", $parameters);
+    }
+
+    /**
+     * @see https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issues/#api-rest-api-3-issue-createmeta-projectidorkey-issuetypes-get
+     * @throws \Exception
+     */
+    public function getCreateMetadataProjectIssueTypes(string $projectIdOrKey, array $parameters = [])
+    {
+        return $this->execute('get', "issue/createmeta/{$projectIdOrKey}/issuetypes", $parameters);
+    }
+
+    /**
+     * @see https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issues/#api-rest-api-3-issue-createmeta-projectidorkey-issuetypes-issuetypeid-get
+     * @throws \Exception
+     */
+    public function getCreateMetadataProjectIssueType(string $projectIdOrKey, string $issueTypeId, array $parameters = [])
+    {
+        return $this->execute('get', "issue/createmeta/{$projectIdOrKey}/issuetype/{$issueTypeId}", $parameters);
     }
 
     /**
