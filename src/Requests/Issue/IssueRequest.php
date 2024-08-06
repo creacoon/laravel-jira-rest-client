@@ -69,7 +69,7 @@ class IssueRequest extends AbstractRequest
      */
     public function getCreateMetadataProjectIssueType(string $projectIdOrKey, string $issueTypeId, array $parameters = [])
     {
-        return $this->execute('get', "issue/createmeta/{$projectIdOrKey}/issuetype/{$issueTypeId}", $parameters);
+        return $this->execute('get', "issue/createmeta/{$projectIdOrKey}/issuetypes/{$issueTypeId}", $parameters);
     }
 
     /**
