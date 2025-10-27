@@ -147,7 +147,7 @@ class IssueRequest extends AbstractRequest
      */
     public function search($parameters, $asGet = true)
     {
-        return $this->execute($asGet ? 'get' : 'post', 'search', $parameters);
+        return $this->execute($asGet ? 'get' : 'post', 'search/jql', $parameters);
     }
 
     /**
